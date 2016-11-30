@@ -1,0 +1,24 @@
+Checklist Map:
+
+	Completed:
+
+	Provinces.bmp
+	Terrain.bmp
+	world_normal.bmp
+	heightmap.bmp
+	definition.csv
+
+			To do:
+
+			default.map
+			area.txt
+			climate.txt
+			continent.txt
+			provicegroup.txt
+			seasons.txt
+			superregion.txt
+			terrain.txt
+			trade_winds.txt
+			adjacencies.csv
+			(positions.txt)
+			colormap_x.DDS (Nvidia Texture Tools)
