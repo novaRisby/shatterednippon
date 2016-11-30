@@ -1,0 +1,21 @@
+# 407 - OQ
+
+owner = JAP
+add_core = JAP
+controller = JAP
+
+is_city = yes
+hre = no
+
+religion = shinto
+culture = japanese
+
+base_tax = 2
+base_production = 2
+base_manpower = 2
+
+trade_goods = silk
+
+capital = "OQ"
+
+discovered_by = chinese

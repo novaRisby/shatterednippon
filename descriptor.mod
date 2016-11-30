@@ -1,0 +1,12 @@
+name="NipponBanzai"
+archive="mod/nippon.zip"
+replace_path="common/bookmarks"
+replace_path="history/countries"
+replace_path="history/provinces"
+replace_path="history/diplomacy"
+replace_path="history/wars"
+tags={
+	"map"
+	"graphics"
+}
+supported_version="1.18.*.*"

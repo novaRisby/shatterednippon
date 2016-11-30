@@ -1,0 +1,21 @@
+# 443 - QA
+
+owner = JAP
+add_core = JAP
+controller = JAP
+
+is_city = yes
+hre = no
+
+religion = shinto
+culture = japanese
+
+base_tax = 2
+base_production = 2
+base_manpower = 2
+
+trade_goods = silk
+
+capital = "QA"
+
+discovered_by = chinese
