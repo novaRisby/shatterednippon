@@ -6,12 +6,15 @@ Checklist Map:
 	Terrain.bmp
 	world_normal.bmp
 	heightmap.bmp
-	definition.csv
-
+	
+	Psuedo-complete:
+	
+	default.map - needs sea_starts (and possible lakes) defined
+	area.txt - needs to be split up in to smaller areas, province numbers geography needs to be corrected and sea tile areas need to be defined
+	definition.csv - is just missing names for all the provinces but passable atm
+	
 			To do:
 
-			default.map
-			area.txt
 			climate.txt
 			continent.txt
 			provicegroup.txt
