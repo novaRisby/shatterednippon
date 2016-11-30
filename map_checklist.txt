@@ -6,6 +6,9 @@ Checklist Map:
 	Terrain.bmp
 	world_normal.bmp
 	heightmap.bmp
+	continent.txt - don't think we want to split the map up in continents
+	provicegroup.txt - serves no use?
+	seasons.txt
 	
 	Psuedo-complete:
 	
@@ -15,10 +18,6 @@ Checklist Map:
 	climate.txt - needs to be properly split according to climate, and mountains possibly need to be added.
 	
 			To do:
-
-			continent.txt
-			provicegroup.txt
-			seasons.txt
 			superregion.txt
 			terrain.txt
 			trade_winds.txt
