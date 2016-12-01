@@ -1,0 +1,12 @@
+bookmark =
+{
+    name = "SENGOKU_JIDAI"
+    desc = "SENGOKU_JIDAI_DESC"
+    date = 1444.11.11
+    
+    center = 200
+    default = yes
+    
+    country = JAP
+}
+
