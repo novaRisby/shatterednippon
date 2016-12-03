@@ -1,26 +1,26 @@
 Checklist Map:
 
-	Completed:
+Completed:
+Provinces.bmp
+Terrain.bmp
+world_normal.bmp
+heightmap.bmp
+continent.txt - don't think we want to split the map up in continents
+provicegroup.txt - serves no use?
+seasons.txt
+terrain.txt - copied from vanilla
+superregion.txt - might need more regions in it, but probably not
 
-	Provinces.bmp
-	Terrain.bmp
-	world_normal.bmp
-	heightmap.bmp
-	continent.txt - don't think we want to split the map up in continents
-	provicegroup.txt - serves no use?
-	seasons.txt
-	
-	Psuedo-complete:
-	
-	default.map - needs sea_starts (and possible lakes) defined.
-	area.txt - needs to be split up in to smaller areas, province numbers geography needs to be corrected and sea tile areas need to be defined.
-	definition.csv - is just missing names for all the provinces but passable atm.
-	climate.txt - needs to be properly split according to climate, and mountains possibly need to be added.
-	
-			To do:
-			superregion.txt
-			terrain.txt
-			trade_winds.txt
-			adjacencies.csv
-			(positions.txt)
-			colormap_x.DDS (Nvidia Texture Tools)
+
+Psuedo-complete:
+default.map - needs sea_starts (and possible lakes) defined.
+area.txt - needs to be split up in to smaller areas, province numbers geography needs to be corrected and sea tile areas need to be defined.
+definition.csv - is just missing names for all the provinces but passable atm.
+trade_winds.txt - just left empty, no need for it?
+
+
+To do:
+climate.txt - needs to be properly split according to climate, and mountains possibly need to be added.
+adjacencies.csv
+(positions.txt)
+colormap_x.DDS (Nvidia Texture Tools)
