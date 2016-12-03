@@ -1,0 +1,20 @@
+Country checklist:
+
+Completed:
+common/bookmarks/ # just fix the date and province location
+localisation/EU4_l_english.yml # probably complete
+
+
+Pseudo-complete:
+common/countries/ # works but all the countries need to be added
+common/country_colors/ # same here
+common/country_tags/ # and here
+history/countries/ # you know the drill
+history/provinces/ # rename all provinces and add sea tiles
+localisation/countries_l_english.yml # yep
+
+
+To do:
+localisation/prov_names_l_english.yml # province names
+gfx/flags/ # add flags for all tags
+
