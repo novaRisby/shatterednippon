@@ -2,7 +2,7 @@ bookmark =
 {
     name = "SENGOKU_JIDAI"
     desc = "SENGOKU_JIDAI_DESC"
-    date = 1444.11.11
+    date = 1525.1.1
     
     center = 200
     default = yes
