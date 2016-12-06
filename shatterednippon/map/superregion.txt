@@ -1,5 +1,5 @@
 # A region can only belong to one super region.
 
 japan_superregion = {
-	japan_region
+	
 }

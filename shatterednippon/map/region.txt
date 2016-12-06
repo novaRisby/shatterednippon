@@ -1,0 +1,45 @@
+# A province can only belong to one region!
+
+# Ordered from north to south
+
+hokkaidō_region = {
+	areas = {
+	
+	}
+}
+
+tōhoku_region = {
+	areas = {
+	
+	}
+}
+
+kantō_region = {
+	areas = {
+	
+	}
+}
+
+chūbu_region = {
+	areas = {
+	
+	}
+}
+
+chūgoku_region = {
+	areas = {
+	
+	}
+}
+
+shikoku_region = {
+	areas = {
+	
+	}
+}
+
+kyūshū_region = {
+	areas = {
+	
+	}
+}

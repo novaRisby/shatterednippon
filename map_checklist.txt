@@ -10,6 +10,7 @@ provicegroup.txt - serves no use?
 seasons.txt
 terrain.txt - copied from vanilla
 superregion.txt - might need more regions in it, but probably not
+region.txt - names might need to be changed due to "strange" (non-utf-8) chars
 
 
 Psuedo-complete:
