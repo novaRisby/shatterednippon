@@ -2,12 +2,17 @@
 
 # Ordered from north to south
 
+# Sources used: 
+https://www.fas.harvard.edu/~chgis/japan/images/hall_medieval_prov.jpg
+https://www.fas.harvard.edu/~chgis/japan/images/adolphson_japan.jpg
+
 hokkaidō_region = {
 	areas = {
 	
 	}
 }
 
+# Possibly not historically accurate
 tōhoku_region = {
 	areas = {
 	
@@ -20,10 +25,22 @@ kantō_region = {
 	}
 }
 
-chūbu_region = {
+honshu_region = {
 	areas = {
 	
 	}
+}
+
+tokai_region = {
+    areas = {
+    
+    }
+}
+
+kinai_region = {
+    areas = {
+
+    }
 }
 
 chūgoku_region = {
