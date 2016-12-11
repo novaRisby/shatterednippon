@@ -1,5 +1,12 @@
 # A region can only belong to one super region.
 
 japan_superregion = {
-	
+	hokkaido_region
+	tohoku_region
+	kanto_region
+	chubu_region
+	kinai_region
+	chugoku_region
+	kyushu_region
+	shikoku_region
 }

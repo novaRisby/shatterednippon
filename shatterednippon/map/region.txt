@@ -3,60 +3,127 @@
 # Ordered from north to south
 
 # Sources used: 
-https://www.fas.harvard.edu/~chgis/japan/images/hall_medieval_prov.jpg
-https://www.fas.harvard.edu/~chgis/japan/images/adolphson_japan.jpg
+# https://www.fas.harvard.edu/~chgis/japan/images/hall_medieval_prov.jpg
+# https://www.fas.harvard.edu/~chgis/japan/images/adolphson_japan.jpg
+# https://commons.wikimedia.org/wiki/File:Japan_Tohoku_Map.png
 
-hokkaidō_region = {
+hokkaido_region = {
 	areas = {
-	
+		oshima_peninsula_area
 	}
 }
 
 # Possibly not historically accurate
-tōhoku_region = {
+tohoku_region = {
 	areas = {
-	
+		mutsu_area
+		dewa_area
 	}
 }
 
-kantō_region = {
+kanto_region = {
 	areas = {
-	
+		kozuke_area
+		shimotsuke_area
+		hitachi_area
+		musashi_area
+		shinamo_area
+		kazuza_area
+		awa_area
 	}
 }
 
-honshu_region = {
+# Literally 80% of Japan. XD
+#honshu_region = {
+#	areas = {
+#	
+#	}
+#}
+
+chubu_region = {
 	areas = {
-	
+		sado_area
+		echigo_area
+		shinamo_area
+		kai_area
+		sagami_area
+		izu_area
+		suruga_area
+		totomi_area
+		mikawa_area
+		owari_area
+		mino_area
+		hida_area
+		etchu_area
+		hoto_area
+		kaga_area
+		echizen_area
+		wakasa_area
 	}
 }
 
-tokai_region = {
-    areas = {
+# tokai_region = {
+    # areas = {
     
-    }
-}
+    # }
+# }
 
 kinai_region = {
     areas = {
-
+		omi_area
+		ise_area
+		shima_area
+		iga_area
+		yamato_area
+		kii_area
+		yamashiro_area
+		izumi_area
+		kawachi_area
+		settsu_area
+		tamba_area
+		tango_area
+		tajima_area
+		harima_area
     }
 }
 
-chūgoku_region = {
+chugoku_region = {
 	areas = {
-	
+		mimasaka_area
+		inaba_area
+		hoki_area
+		bizen_area
+		bitchu_area
+		izumo_area
+		bingo_area
+		iwami_area
+		aki_area
+		nagato_area
+		suo_area
+	}
+}
+
+
+kyushu_region = {
+	areas = {
+		hizen_area
+		chikuzen_area
+		buzen_area
+		chikugo_area
+		bungo_area
+		higo_area
+		hyuga_area
+		satsuma_area
+		osomu_area
 	}
 }
 
 shikoku_region = {
 	areas = {
-	
-	}
-}
-
-kyūshū_region = {
-	areas = {
-	
+		iyo_area
+		tosa_area
+		sanuki_area
+		awa_area
+		awaji_area
 	}
 }
