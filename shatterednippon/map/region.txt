@@ -7,6 +7,8 @@
 # https://www.fas.harvard.edu/~chgis/japan/images/adolphson_japan.jpg
 # https://commons.wikimedia.org/wiki/File:Japan_Tohoku_Map.png
 
+# Land Regions
+
 hokkaido_region = {
 	areas = {
 		oshima_peninsula_area
@@ -127,3 +129,5 @@ shikoku_region = {
 		awaji_area
 	}
 }
+
+# Sea Regions
