@@ -8,10 +8,10 @@ heightmap.bmp
 continent.txt - don't think we want to split the map up in continents
 provicegroup.txt - serves no use?
 seasons.txt
-terrain.txt - copied from vanilla
-superregion.txt - might need more regions in it, but probably not
-region.txt -
-
+terrain.txt - probably does not need terrain overrides defined?
+superregion.txt - might need more superregions in it, but probably not
+region.txt
+tradegoods.bmp
 
 Psuedo-complete:
 default.map - needs sea_starts (and possible lakes) defined.
