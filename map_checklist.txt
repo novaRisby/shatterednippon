@@ -12,9 +12,9 @@ terrain.txt - probably does not need terrain overrides defined?
 superregion.txt - might need more superregions in it, but probably not
 region.txt
 tradegoods.bmp
+default.map
 
 Psuedo-complete:
-default.map - needs sea_starts (and possible lakes) defined.
 area.txt - sea tile areas need to be defined and named
 definition.csv - is just missing names for all the provinces but passable atm.
 trade_winds.txt - just left empty, no need for it?
