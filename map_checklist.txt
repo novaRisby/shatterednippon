@@ -14,14 +14,17 @@ region.txt
 tradegoods.bmp
 default.map
 
+
 Psuedo-complete:
 area.txt - sea tile areas need to be defined and named
 definition.csv - is just missing names for all the provinces but passable atm.
-trade_winds.txt - just left empty, no need for it?
-
+colormap_x.DDS (Nvidia Texture Tools) - Did a hackjob, functional but should not be used
+trees.bmp - No trees on map
 
 To do:
 climate.txt - needs to be properly split according to climate, and mountains possibly need to be added.
 adjacencies.csv
 (positions.txt)
-colormap_x.DDS (Nvidia Texture Tools)
+
+No work required:
+trade_winds.txt - just left empty, no need for it
