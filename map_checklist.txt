@@ -20,11 +20,13 @@ area.txt - sea tile areas need to be defined and named
 definition.csv - is just missing names for all the provinces but passable atm.
 colormap_x.DDS (Nvidia Texture Tools) - Did a hackjob, functional but should not be used
 trees.bmp - No trees on map
+climate.txt - provinces' climates need to individually redefined and mountains possibly need to be added
+
 
 To do:
-climate.txt - needs to be properly split according to climate, and mountains possibly need to be added.
 adjacencies.csv
 (positions.txt)
+
 
 No work required:
 trade_winds.txt - just left empty, no need for it
