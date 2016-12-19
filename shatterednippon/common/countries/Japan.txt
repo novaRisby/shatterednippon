@@ -11,8 +11,6 @@ historical_score = 1500
 preferred_religion = shinto
 
 historical_idea_groups = {
-    espionage_ideas
-    aristocratic_ideas
     religious_ideas
     maritime_ideas
     naval_ideas
