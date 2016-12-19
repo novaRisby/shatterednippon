@@ -1,12 +1,8 @@
-name="NipponBanzai"
-archive="mod/shatterednippon.zip"
-replace_path="common/bookmarks"
-replace_path="history/countries"
-replace_path="history/provinces"
-replace_path="history/diplomacy"
-replace_path="history/wars"
+name="Shattered Nippon"
+path = "mod/shatterednippon"
+replace_path="history"
+replace_path="map"
 tags={
-	"map"
-	"graphics"
+    "Sweddit"
 }
 supported_version="1.19.*.*"
