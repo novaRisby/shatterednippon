@@ -116,7 +116,7 @@ kyushu_region = {
 		higo_area
 		hyuga_area
 		satsuma_area
-		osomi_area
+		osumi_area
 	}
 }
 
