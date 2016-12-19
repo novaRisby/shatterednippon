@@ -1,5 +1,5 @@
 name="NipponBanzai"
-archive="mod/nippon.zip"
+archive="mod/shatterednippon.zip"
 replace_path="common/bookmarks"
 replace_path="history/countries"
 replace_path="history/provinces"
