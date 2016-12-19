@@ -30,7 +30,7 @@ kanto_region = {
 		hitachi_area
 		musashi_area
 		shinamo_area
-		kazuza_area
+		kazusa_area
 		awa_area
 	}
 }
@@ -116,7 +116,7 @@ kyushu_region = {
 		higo_area
 		hyuga_area
 		satsuma_area
-		osomu_area
+		osomi_area
 	}
 }
 
