@@ -12,9 +12,9 @@ common/country_tags/ # and here
 history/countries/ # you know the drill
 history/provinces/ # rename all provinces and add sea tiles
 localisation/countries_l_english.yml # yep
+localisation/prov_names_l_english.yml # proper province names
 
 
 To do:
-localisation/prov_names_l_english.yml # province names
 gfx/flags/ # add flags for all tags
 
