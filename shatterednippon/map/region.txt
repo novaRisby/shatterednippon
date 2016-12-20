@@ -131,3 +131,9 @@ shikoku_region = {
 }
 
 # Sea Regions
+
+japan_sea_region = {
+	areas = {
+		japanese_sea_area
+	}
+}
