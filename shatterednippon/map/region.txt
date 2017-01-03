@@ -9,6 +9,10 @@
 
 # Land Regions
 
+random_new_world_region = {
+}
+
+
 hokkaido_region = {
 	areas = {
 		oshima_peninsula_area
