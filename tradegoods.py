@@ -7,6 +7,8 @@ import fileinput
 from PIL import Image
 
 """
+FIXME: Currently not working properly. Seems to either skip provinces or just not redefine them. Will look into it. - Curious
+
 Requires:
 A folder structure according to Paradox's own: [cwd]\history\provinces\
 Files:
