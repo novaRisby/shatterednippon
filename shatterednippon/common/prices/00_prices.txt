@@ -116,10 +116,14 @@ unknown = {
 
 # Modded Tradegoods
 
-rice = {
-	base_price = 2
+silver = {
+	base_price = 5
 }
 
-sushi = {
-	base_price = 4
+lead = {
+	base_price = 4.5
+}
+
+rice = {
+	base_price = 2
 }

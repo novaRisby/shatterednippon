@@ -1201,16 +1201,23 @@ unknown = {
 
 #Modded tradegoods
 
-rice = {
-	color = { 1.0 1.0 1.0 }
+silver = {
+	color = { 0.51 0.51 0.51 }
 	modifier = {
-		discipline = 2.5
+		trade_efficiency = 2.5
 	}
 }
 
-sushi = {
-	color = { 1.0 0.59 1.0 }
+lead = {
+	color = { 0.36 0.31 0.31 }
 	modifier = {
 		global_unrest = -2
+	}
+}
+
+rice = {
+	color = { 0.79 0.96 0.58 }
+	modifier = {
+		discipline = 2.5
 	}
 }

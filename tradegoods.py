@@ -77,13 +77,6 @@ def get_defined_tradegoods():
 				colors.append(tuple(round(i * 255) for i in numbers))
 		return names, colors
 
-def tradegood_name(pixel, names, colors):
-	"""
-	Returns the tradegood name of a given RGB tuple if one exists, otherwise returns None.
-	"""
-	return names[colors.index(pixel)]
-
-
 if __name__ == '__main__':
 	im = Image.open("tradegoods.bmp")
 	prov_im = Image.open(os.getcwd()+"\\shatterednippon\\map\\provinces.bmp")
@@ -101,5 +94,5 @@ if __name__ == '__main__':
 				checked.append(corr_pixel)
 				prov_num = get_province_number(corr_pixel)
 				if prov_num:
-					replace_tradegood(prov_num, tradegood_name(pixel, names, colors))
+					replace_tradegood(prov_num, names[colors.index(pixel)]) # tradegood name of a given RGB tuple
 		
