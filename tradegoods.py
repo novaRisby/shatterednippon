@@ -21,7 +21,7 @@ def replace_tradegood(prov_num, new_tradegood):
 	"""
 	Replaces the given province's tradegood with the new one defined in the tradegoods.bmp map.
 	"""
-	directory = os.getcwd()+"\\history\\provinces\\"
+	directory = os.getcwd()+"\\shatterednippon\\history\\provinces\\"
 	for file in os.listdir(directory):
 		if file.startswith(str(prov_num)):
 			old_tradegood = find_tradegood(directory+file)
@@ -52,7 +52,7 @@ def get_province_number(corr_pixel):
 	Checks definition.csv if provinces.bmp's corresponding pixel's RBG value is in the definition list. Returns the province number if it finds the pixel in the list, returns None otherwise.
 	"""
 	corr_pixel = str(corr_pixel).strip("()").replace(", ", ";") #Reformats the pixel to ensure it can be compared.
-	with open("definition.csv", "r") as definitions:
+	with open(os.getcwd()+"\\shatterednippon\\map\\definition.csv", "r") as definitions:
 		prov_num = 1
 		for line in definitions:
 			if corr_pixel in line:
@@ -66,7 +66,7 @@ def get_defined_tradegoods():
 	"""
 	names = []
 	colors = []
-	with open("00_tradegoods.txt", "r") as f:
+	with open(os.getcwd()+"\\shatterednippon\\common\\tradegoods\\00_tradegoods.txt", "r") as f:
 		for line in f:
 			if line[0].isalpha():
 				names.append(line.strip("={} \n"))
@@ -84,7 +84,7 @@ def tradegood_name(pixel, names, colors):
 
 if __name__ == '__main__':
 	im = Image.open("tradegoods.bmp")
-	prov_im = Image.open("provinces.bmp")
+	prov_im = Image.open(os.getcwd()+"\\shatterednippon\\map\\provinces.bmp")
 	image_size = im.size
 
 	names, colors = get_defined_tradegoods()
