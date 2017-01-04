@@ -10,10 +10,11 @@ Simply double click this file with Python installed to run the mod.
 import os
 import shutil
 import subprocess
+import getpass
 
 mod = "shatterednippon"
 mod_dir = os.getcwd()
-eu4_mod_folder = "C:\\Users\\John\\Documents\\Paradox Interactive\\Europa Universalis IV\\mod\\"
+eu4_mod_folder = "C:\\Users\\%s\\Documents\\Paradox Interactive\\Europa Universalis IV\\mod\\" % getpass.getuser()
 eu4_game = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Europa Universalis IV\\"
 
 if os.path.isdir(eu4_mod_folder+"\\"+mod+"\\"):
