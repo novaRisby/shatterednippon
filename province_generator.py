@@ -21,12 +21,15 @@ colors = []
 
 image_size = im.size
 
+"""
 for x in range(0, image_size[0]):
 	for y in range(0, image_size[1]):
 		cord = (x,y)
 		pixel = im.getpixel(cord)
 		if pixel not in colors and not (pixel[0:3] == (255,255,255) or pixel[0:3] == (0,0,0)): # excluding pure white and black
 			colors.append(pixel) 
+"""
+colors = im.getcolors(maxcolors=10000) # Arbitrary maxcolors number
 
 land_tiles = 451
 sea_tiles = 91
@@ -65,11 +68,13 @@ capital = "{1}"
 discovered_by = chinese""".format(out, out.split(" - ")[1]))
 	local_file.write(' PROV{0}:0 "{1}"\n'.format(x+1, out.split(" - ")[1]))
 	
-	definitions.write("%d;%s;%s;%s;;%s\n" % (x+1, color[0], color[1], color[2], out.split(" - ")[1]))
+	definitions.write("{0};{1};{2};{3};;{4}\n".format(x+1, color[1][0], color[1][1], color[1][2], out.split(" - ")[1]))
 	
 	f.close()
 
 	x += 1
-	
+
 local_file.close()
 definitions.close()
+
+print (str(x) + " provinces defined.")

@@ -10,6 +10,7 @@ replace_path="decisions"
 replace_path="events"
 replace_path="missions"
 
+replace_path="common/bookmarks"
 replace_path="common/client_states"
 replace_path="common/colonial_regions"
 replace_path="common/countries"
