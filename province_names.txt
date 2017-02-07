@@ -1,0 +1,2 @@
+# Prov Num - Name - Color (R,G,B) - Terrain - Trade Good etc.
+1 - Tokyo - (1,2,3) - Mountains - 

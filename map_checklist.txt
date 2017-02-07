@@ -1,31 +1,38 @@
 Checklist Map:
 
 Completed:
-Provinces.bmp
-Terrain.bmp
-world_normal.bmp
-heightmap.bmp
-continent.txt - don't think we want to split the map up in continents
-provicegroup.txt - serves no use?
-seasons.txt
-terrain.txt - probably does not need terrain overrides defined?
-superregion.txt - might need more superregions in it, but probably not
-region.txt
-tradegoods.bmp
-default.map
-
-
-Psuedo-complete:
-area.txt - sea tile areas need to be defined and named
-definition.csv - is just missing names for all the provinces but passable atm.
-colormap_x.DDS (Nvidia Texture Tools) - Did a hackjob, functional but should not be used
-trees.bmp - No trees on map
-climate.txt - provinces' climates need to individually redefined and mountains possibly need to be added
 
 
 To do:
+/map/terrain/
+colormap_autumn.dds
+colormap_spring.dds
+colormap_summer.dds
+colormap_water.dds
+colormap_winter.dds
+
+/map/
+heightmap.bmp
+provinces.bmp
+rivers.bmp
+terrain.bmp
+trees.bmp
+world_normal.bmp
+
 adjacencies.csv
-(positions.txt)
+ambient_object.txt
+area.txt
+climate.txt
+continent.txt
+default.map
+definition.csv
+provincegroup.txt
+positions.txt
+region.txt
+seasons.txt
+superregion.txt
+terrain.txt
+trade_winds.txt
 
 
 No work required:

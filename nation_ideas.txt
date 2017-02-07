@@ -1,0 +1,12 @@
+# Ainu
+Low forcelimit, but high attrition for enemies. Reduced attrition for nations in Ainu. Always winter. Hostile core-creation cost. Trade bonuses. Animists. Should be hard for them to get into Japan, and vice versa.
+
+# Korea
+Tech cost-reduction. Durable and fairly strong navies. Possibly idea cost-reduction as well. Not many military ideas. A fair amount of administrative ideas. A medium amount of diplo.
+
+# Hosokawa
+Good archers, meaning good military ideas.
+
+#Bitchu and co.
+Good boats.
+
