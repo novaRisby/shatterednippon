@@ -2,7 +2,7 @@
 A complete overhaul to Europa Universalis IV in which feudal Japan replaces the original map by Curious and StabShot.
 
 ## Checklist
-### - [ ] [/map/](https://github.com/CuriouslyCurious/shatterednippon/blob/remastered/MAP.md)
+### [/map/](https://github.com/CuriouslyCurious/shatterednippon/blob/remastered/MAP.md)
 
 ![alt tag](https://raw.githubusercontent.com/CuriouslyCurious/shatterednippon/master/shatterednippon/map/provinces.bmp)
 
