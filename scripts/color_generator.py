@@ -120,7 +120,7 @@ if __name__ == "__main__":
     sea_tiles = []
     borders = []
 
-    map_file = Image.open("map test.bmp")
+    map_file = Image.open("provinces.bmp")
     image_size = map_file.size
     print("size: ", image_size)
     pixel = map_file.load()
