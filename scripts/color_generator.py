@@ -138,7 +138,7 @@ if __name__ == "__main__":
     
     print ("time: ", time.clock() - t)
     t = time.clock()
-    color_province(map_file, land_tiles, (10, 10, 10), (255, 255, 255))
+    color_province(map_file, land_tiles, (10, 10, 0), (255, 255, 0))
     color_province(map_file, sea_tiles, (10, 200, 200), (125, 255, 255))
     color_in_borders_with_adjacent(map_file, borders)
     print ("coloring: ", time.clock() - t)
