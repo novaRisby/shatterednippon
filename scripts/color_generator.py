@@ -16,41 +16,59 @@ The script is rather slow (takes about one minute to run on a standard EU4 map s
 
 colors = []
 
-def floodfill(image, x_start, y_start, fill_color):
+def floodfill(image, x_start, y_start, fill_color, return_selection = False):
     """
-    Just your average floodfill algorithm.
+    Just your average floodfill algorithm. Warning if return_selection is set to True and you try to fill something incredibly large your machine might run out of memory.
     """
     pixel = image.load()
     xsize, ysize = image.size
     
-    stack = set()
-    stack.add((x_start, y_start))
-    selection = set()
     try:
         orig_color = pixel[x_start, y_start]
         if orig_color == fill_color:
             return [] # seed point is already not matched
-        selection.add((x_start, y_start))
     except IndexError:
         return [] # seed point outside image
-
+    
+    stack = set()
+    stack.add((x_start, y_start))
     count = 0
-    tid = time.clock()
-    while stack:
-        x, y = stack.pop()
-        count += 1
-        if pixel[x, y] == orig_color:
-            pixel[x, y] = fill_color
-            selection.add((x, y))
-            if x > 0:
-                stack.add((x - 1, y))
-            if x < (xsize - 1):
-                stack.add((x + 1, y))
-            if y > 0:
-                stack.add((x, y - 1))
-            if y < (ysize - 1):
-                stack.add((x, y + 1))
-    return list(selection)
+    
+    if return_selection:
+        selection = set()
+        selection.add((x_start, y_start))
+
+        count = 0
+        while stack:
+            x, y = stack.pop()
+            count += 1
+            if pixel[x, y] == orig_color:
+                pixel[x, y] = fill_color
+                selection.add((x, y))
+                if x > 0:
+                    stack.add((x - 1, y))
+                if x < (xsize - 1):
+                    stack.add((x + 1, y))
+                if y > 0:
+                    stack.add((x, y - 1))
+                if y < (ysize - 1):
+                    stack.add((x, y + 1))
+        return list(selection)
+        
+    else:
+        while stack:
+            x, y = stack.pop()
+            count += 1
+            if pixel[x, y] == orig_color:
+                pixel[x, y] = fill_color
+                if x > 0:
+                    stack.add((x - 1, y))
+                if x < (xsize - 1):
+                    stack.add((x + 1, y))
+                if y > 0:
+                    stack.add((x, y - 1))
+                if y < (ysize - 1):
+                    stack.add((x, y + 1))
         
 def color_province(image, provinces, lower_range, higher_range):
     """Colors provinces with a random color in a given interval of RGB values. No duplicates."""
@@ -108,7 +126,7 @@ if __name__ == "__main__":
           
     map_dir = os.getcwd()+"\\shatterednippon\\map\\"
     
-    if os.path.isfile(map_dir+"provinces.bmp"):
+    if os.path.isfile(map_dir+"not_memory_error.bmp"):
         sys.exit("A \"provinces.bmp\" already exists. Please check if you want to keep this file.")
     
     land_color = (164, 164, 164)
@@ -129,9 +147,9 @@ if __name__ == "__main__":
         for y in range(0, image_size[1]):
             pixel_color = pixel[x, y] # Gets the color of pixel at cord
             if pixel_color == land_color:
-                land_tiles.append(floodfill(map_file, x, y, fill_color))
+                land_tiles.append(floodfill(map_file, x, y, fill_color, True))
             elif pixel_color == sea_color:
-                sea_tiles.append(floodfill(map_file, x, y, fill_color))
+                sea_tiles.append(floodfill(map_file, x, y, fill_color, True))
             elif pixel_color == border_color:
                 borders.append((x, y))
             
