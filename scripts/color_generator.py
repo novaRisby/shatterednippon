@@ -4,7 +4,9 @@
 import os
 import sys
 import random
-import time
+#import time
+#import _thread
+#import pygame
 
 from PIL import Image
 
@@ -13,8 +15,6 @@ As one can imagine, this script requires pillow to be installed.
 
 The script is rather slow (takes about one minute to run on a standard EU4 map size), but since this script should only be run once per project I feel that this is an acceptable sacrifice. I've done what I can to optimise it.
 """
-
-colors = []
 
 def floodfill(image, x_start, y_start, fill_color, return_selection = False):
     """
@@ -32,16 +32,13 @@ def floodfill(image, x_start, y_start, fill_color, return_selection = False):
     
     stack = set()
     stack.add((x_start, y_start))
-    count = 0
     
     if return_selection:
         selection = set()
         selection.add((x_start, y_start))
 
-        count = 0
         while stack:
             x, y = stack.pop()
-            count += 1
             if pixel[x, y] == orig_color:
                 pixel[x, y] = fill_color
                 selection.add((x, y))
@@ -58,7 +55,6 @@ def floodfill(image, x_start, y_start, fill_color, return_selection = False):
     else:
         while stack:
             x, y = stack.pop()
-            count += 1
             if pixel[x, y] == orig_color:
                 pixel[x, y] = fill_color
                 if x > 0:
@@ -70,25 +66,15 @@ def floodfill(image, x_start, y_start, fill_color, return_selection = False):
                 if y < (ysize - 1):
                     stack.add((x, y + 1))
         
-def color_province(image, provinces, lower_range, higher_range):
-    """Colors provinces with a random color in a given interval of RGB values. No duplicates."""
-    pixel = image.load()
-    rand = random.randint(lower_range[2], higher_range[2])
-    rand_color = randomise_color(lower_range, higher_range)
-    
-    for province in provinces:
-        count = 0
-        while rand_color in colors:
-            if count == 5000: # Sanity check to ensure the program does not run forever.
-                sys.exit("Cannot find a unique color, either you are incredibly unlucky or the color interval is too close.")
-            rand_color = randomise_color(lower_range, higher_range)
-            count += 1
-            
-        floodfill(image, province[0][0], province[0][1], rand_color)
-        colors.append(rand_color)
-
-def randomise_color(lower_range, higher_range):
-    return (random.randint(lower_range[0], higher_range[0]), random.randint(lower_range[1], higher_range[1]), random.randint(lower_range[2], higher_range[2]))
+def randomise_color(lower_range, higher_range, colors = None):
+    count = 0
+    while True:
+        if count == 5000: # Sanity check to ensure the program does not run forever.
+            sys.exit("Cannot find a unique color, either you are incredibly unlucky or the color interval is too close.")
+        rand_color = (random.randint(lower_range[0], higher_range[0]), random.randint(lower_range[1], higher_range[1]), random.randint(lower_range[2], higher_range[2]))
+        count += 1
+        if rand_color not in colors:
+            return rand_color
     
 def color_in_borders_with_adjacent(image, borders):
     pixel = image.load()
@@ -121,47 +107,72 @@ def color_in_borders_with_adjacent(image, borders):
                 pass
 
         
-if __name__ == "__main__":
-    t = time.clock()
-          
-    map_dir = os.getcwd()+"\\shatterednippon\\map\\"
-    
-    if os.path.isfile(map_dir+"not_memory_error.bmp"):
-        sys.exit("A \"provinces.bmp\" already exists. Please check if you want to keep this file.")
-    
+def make_provinces_bmp(map_file): 
     land_color = (164, 164, 164)
     sea_color = (42, 42, 42)
     border_color = (0, 0, 0)
-    fill_color = (255, 255 ,255) # Just a color that is different from the others
         
     land_tiles = []
     sea_tiles = []
     borders = []
+    incorrect = []
+    
+    colors = []
 
-    map_file = Image.open("provinces.bmp")
     image_size = map_file.size
     print("size: ", image_size)
     pixel = map_file.load()
     
-    for x in range(0, image_size[0]):
-        for y in range(0, image_size[1]):
+    for y in range(image_size[1]):
+        for x in range(image_size[0]):
             pixel_color = pixel[x, y] # Gets the color of pixel at cord
             if pixel_color == land_color:
-                land_tiles.append(floodfill(map_file, x, y, fill_color, True))
+                rand_color = randomise_color((10, 10, 0), (255, 255, 0), colors)
+                land_tiles.append(floodfill(map_file, x, y, rand_color, True))
+                colors.append(rand_color)
             elif pixel_color == sea_color:
-                sea_tiles.append(floodfill(map_file, x, y, fill_color, True))
+                rand_color = randomise_color((10, 200, 200), (125, 255, 255), colors)
+                sea_tiles.append(floodfill(map_file, x, y, rand_color, True))
+                colors.append(rand_color)
             elif pixel_color == border_color:
                 borders.append((x, y))
+            else:
+                incorrect.append((x, y))
             
-    
-    print ("time: ", time.clock() - t)
-    t = time.clock()
-    color_province(map_file, land_tiles, (10, 10, 0), (255, 255, 0))
-    color_province(map_file, sea_tiles, (10, 200, 200), (125, 255, 255))
+
+    print("land_tiles: ", len(land_tiles))
+    print("sea_tiles: ", len(sea_tiles))
+    print("There are %d pixels that are incorrectly colored." % (len(incorrect)))
     color_in_borders_with_adjacent(map_file, borders)
-    print ("coloring: ", time.clock() - t)
     
-    map_file.show()
     
-    print ("land_tiles: ", len(land_tiles))
-    print ("sea_tiles: ", len(sea_tiles))
+"""
+def display(map_file):
+    n=1
+    pygame.init()
+    size = map_file.size
+    w, h = size
+    size=(w,h)
+    screen = pygame.display.set_mode(size) 
+    c = pygame.time.Clock() # create a clock object for timing
+
+    while True:
+        img=pygame.image.load(filename) 
+        screen.blit(img,(0,0))
+        pygame.display.flip() # update the display
+        c.tick(10) # only three images per second
+"""
+
+if __name__ == "__main__":
+    map_dir = os.getcwd()+"\\shatterednippon\\map\\"
+    """
+    if os.path.isfile("provinces.bmp"):
+        sys.exit("A \"provinces.bmp\" already exists. Please check if you want to keep this file.")
+    """
+    map_file = Image.open("provinces.bmp")
+    """
+    map_file = _thread.start_new_thread(make_provinces_bmp, (map_file,))
+    display(map_file)
+    """
+    make_provinces_bmp(map_file)
+    map_file.save("random.bmp")
