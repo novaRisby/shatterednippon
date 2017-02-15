@@ -110,9 +110,14 @@ def color_in_borders_with_adjacent(image, borders):
 def make_provinces_bmp(map_file): 
     land_color = (91, 91, 91)
     sea_color = (213, 213, 213)
-    land_border_color = (0, 0, 0)
-    sea_border_color = (255, 255, 255)
-        
+    land_border_color = (255, 255, 255)
+    sea_border_color = (0, 0, 0)
+    
+    #land_color = (164, 164, 164)
+    #sea_color = (42, 42, 42)
+    #land_border_color = (0, 0, 0)
+    #sea_border_color = (255, 255, 255)
+    
     land_tiles = []
     sea_tiles = []
     land_borders = []

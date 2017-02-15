@@ -6,9 +6,14 @@ from PIL import Image
 import os
 import codecs
 
-prov_dir = os.getcwd()+"\\shatterednippon\\history\\provinces\\"
-local_dir = os.getcwd()+"\\shatterednippon\\localisation\\"
-map_dir = os.getcwd()+"\\shatterednippon\\map\\"
+if ("scripts" in os.getcwd()):
+    cwd = os.getcwd().replace("\\scripts", "")
+else:    
+    cwd = os.getcwd()
+print(cwd)
+prov_dir = cwd+"\\shatterednippon\\history\\provinces\\"
+local_dir = cwd+"\\shatterednippon\\localisation\\"
+map_dir = cwd+"\\shatterednippon\\map\\"
 
 local_file = open(local_dir + "prov_names_l_english.yml", "w")
 local_file.write("l_english:\n")
@@ -20,21 +25,32 @@ im = Image.open(map_dir+"provinces.bmp")
 colors = []
 
 image_size = im.size
+pixel = im.load()
 
+land_tiles = 0
+sea_tiles = 0
+"""
+for y in range (image_size[1]):
+    for x in range (image_size[0]):
+        pixel_color = pixel[x, y]
+        if pixel_color not in colors and not (pixel_color == (255,255,255) or pixel_color == (0,0,0)): # excluding pure white and black
+            colors.append(pixel)
+            if pixel_color[2] > 0:
+                sea_tiles += 1
+            else:
+                land_tiles += 1
 
-for x in range(0, image_size[0]):
-	for y in range(0, image_size[1]):
-		cord = (x,y)
-		pixel = im.getpixel(cord)
-		if pixel not in colors and not (pixel[0:3] == (255,255,255) or pixel[0:3] == (0,0,0)): # excluding pure white and black
-			colors.append(pixel) 
+"""
+colors = im.getcolors(maxcolors=10000) # Arbitrary maxcolors number
+for color in colors:
+    if color[1][2] > 0:
+        sea_tiles += 1
+    else:
+        land_tiles += 1
 
-#colors = im.getcolors(maxcolors=10000) # Arbitrary maxcolors number
-
-print(colors)
-
-land_tiles = 451
-sea_tiles = 91
+print("land: ", land_tiles)
+print("sea: ", sea_tiles)
+sys.exit()
 provinces = len(colors)
 
 x = 0
