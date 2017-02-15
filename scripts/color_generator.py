@@ -108,13 +108,15 @@ def color_in_borders_with_adjacent(image, borders):
 
         
 def make_provinces_bmp(map_file): 
-    land_color = (164, 164, 164)
-    sea_color = (42, 42, 42)
-    border_color = (0, 0, 0)
+    land_color = (91, 91, 91)
+    sea_color = (213, 213, 213)
+    land_border_color = (0, 0, 0)
+    sea_border_color = (255, 255, 255)
         
     land_tiles = []
     sea_tiles = []
-    borders = []
+    land_borders = []
+    sea_borders = []
     incorrect = []
     
     colors = []
@@ -134,8 +136,10 @@ def make_provinces_bmp(map_file):
                 rand_color = randomise_color((10, 200, 200), (125, 255, 255), colors)
                 sea_tiles.append(floodfill(map_file, x, y, rand_color, True))
                 colors.append(rand_color)
-            elif pixel_color == border_color:
-                borders.append((x, y))
+            elif pixel_color == land_border_color:
+                land_borders.append((x, y))
+            elif pixel_color == sea_border_color:
+                sea_borders.append((x, y))
             else:
                 incorrect.append((x, y))
             
@@ -143,7 +147,8 @@ def make_provinces_bmp(map_file):
     print("land_tiles: ", len(land_tiles))
     print("sea_tiles: ", len(sea_tiles))
     print("There are %d pixels that are incorrectly colored." % (len(incorrect)))
-    color_in_borders_with_adjacent(map_file, borders)
+    color_in_borders_with_adjacent(map_file, land_borders)
+    color_in_borders_with_adjacent(map_file, sea_borders)
     
     
 """
