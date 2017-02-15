@@ -122,7 +122,6 @@ def make_provinces_bmp(map_file):
     sea_tiles = []
     land_borders = []
     sea_borders = []
-    incorrect = []
     
     colors = []
 
@@ -145,13 +144,10 @@ def make_provinces_bmp(map_file):
                 land_borders.append((x, y))
             elif pixel_color == sea_border_color:
                 sea_borders.append((x, y))
-            else:
-                incorrect.append((x, y))
             
 
     print("land_tiles: ", len(land_tiles))
     print("sea_tiles: ", len(sea_tiles))
-    print("There are %d pixels that are incorrectly colored." % (len(incorrect)))
     color_in_borders_with_adjacent(map_file, land_borders)
     color_in_borders_with_adjacent(map_file, sea_borders)
     

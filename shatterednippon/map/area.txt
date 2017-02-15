@@ -4,13 +4,60 @@
 # From North to South
 # Taken from: https://www.fas.harvard.edu/~chgis/japan/images/hall_medieval_prov.jpg
 
+# https://en.wikipedia.org/wiki/Subprefectures_of_Hokkaido
 ########################################
 # Hokkaido					 		   #
 ########################################
 
+# 4c hiyama (don't split)
 oshima_peninsula_area = {
 1 2 3 4 5
 }
+
+# 2
+shiribeshi_area = {
+
+}
+
+# 3b hidaka
+iburi_area = {
+
+}
+
+# 1a ishikari
+sorachi_area = {
+
+}
+
+# 5d rumoi
+kamikawa_area = {
+
+}
+
+# 6
+soya_area = {
+
+}
+
+# 7
+okhotsk_area = {
+
+}
+
+# 8
+tokachi_area = {
+
+}
+
+# 9e nemuro
+kushiro_area = {
+
+}
+
+########################################
+# Honshu					 		   #
+########################################
+
 
 mutsu_area = {
 6 7 8 9 10 
@@ -219,6 +266,15 @@ suo_area = {
 429
 }
 
+oki_area = {
+
+}
+
+
+########################################
+# Kyushu					 		   #
+########################################
+
 hizen_area = {
 430
 }
@@ -254,6 +310,18 @@ satsuma_area = {
 osumi_area = {
 435 
 }
+
+tsushima_area = {
+
+}
+
+iki_area = {
+
+}
+
+########################################
+# Shikoku					 		   #
+########################################
 
 iyo_area = {
 436
