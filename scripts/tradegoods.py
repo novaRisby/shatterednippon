@@ -71,7 +71,7 @@ def get_defined_tradegoods():
 			if line[0].isalpha():
 				names.append(line.strip("={} \n"))
 			elif "color" in line:
-				numbers = tuple(map(float, re.sub("[^\d. ]\s*", "", line).split()))
+				numbers = tuple(map(int, re.sub("[^\d. ]\s*", "", line).split()))
 				colors.append(tuple(round(i * 255) for i in numbers))
 		return names, colors
 
