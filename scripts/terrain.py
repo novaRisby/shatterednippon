@@ -10,20 +10,33 @@ from PIL import Image
 Requires:
 A folder structure according to Paradox's own: [cwd]\history\provinces\
 Files:
-tradegoods.bmp		   	- an image painted with correct tradegoods RGB values
-provinces.bmp			- an image that defines provinces
-00_tradegoods.txt		- defines tradegoods
-definition.csv			- defines provinces
+terrain.bmp             - an image painted with correct terrain RGB values
+provinces.bmp           - an image that defines provinces
+terrain.txt             - defines terrains
+definition.csv          - defines provinces
 [province number - province_name].txt - the actual province file in the directory \history\provinces\
 """
 
-def find_terrain(filepath):
-    return None
+def override_terrain(path, prov_num, terrain_type):
+    
 
-def get_defined_terrains():
+def get_province_number(path, corr_pixel):
+    """
+    Checks definition.csv if provinces.bmp's corresponding pixel's RBG value is in the definition list. Returns the province number if it finds the pixel in the list, returns None otherwise.
+    """
+    corr_pixel = str(corr_pixel).strip("()").replace(", ", ";") #Reformats the pixel to ensure it can be compared.
+    with open(path + "\\map\\definition.csv", "r") as definitions:
+        prov_num = 1
+        for line in definitions:
+            if corr_pixel in line:
+                return prov_num
+            prov_num += 1
+    return None    
+    
+def get_defined_terrains(path):
     names = []
     colors = []
-    with open(os.getcwd()+"/shatterednippon/map/terrain.txt", "r") as f:
+    with open(path+terrain.txt", "r") as f:
         for line in f:
             if re.match("\t\w+ = {", line):
                 names.append(line.strip("={} \n\t"))
@@ -46,12 +59,24 @@ def get_defined_terrains():
 
 if __name__ == "__main__":
     im = Image.open("terrain.bmp")
-    prov_im = Image.open(os.getcwd()+os.pardir()+"\\shatterednippon\\map\\provinces.bmp")
+    path = os.getcwd()+os.pardir()+"\\shatterednippon\\map\\"
+    prov_im = Image.open(path + "map\\provinces.bmp")
 
-    names, colors = get_defined_terrains()
+    names, colors = get_defined_terrains(path)
     pixel = im.load()
+    prov_pixel = prov_im.load()
+    
+    checked = [] #A list of checked corresponding RGB colors.
+
     for y in range(im.size[1])
         for x in range(im.size[0])
+            pixel_color = pixel[x, y]
+            prov_pixel_color = prov_pixel[x, y]
+            if prov_pixel_color not in checked and pixel_color in colors:
+                checked.append(prov_pixel_color)
+                prov_num = get_province_number(path, prov_pixel_color)
+                if prov_num:
+                    override_terrain(path, prov_num, names[colors.index(pixel_color)])
             
     print(names)
     print(colors)
