@@ -46,6 +46,12 @@ def get_defined_terrains():
 
 if __name__ == "__main__":
     im = Image.open("terrain.bmp")
+    prov_im = Image.open(os.getcwd()+os.pardir()+"\\shatterednippon\\map\\provinces.bmp")
+
     names, colors = get_defined_terrains()
+    pixel = im.load()
+    for y in range(im.size[1])
+        for x in range(im.size[0])
+            
     print(names)
     print(colors)
