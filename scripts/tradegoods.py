@@ -58,7 +58,7 @@ def get_province_number(corr_pixel):
 			if corr_pixel in line:
 				return prov_num
 			prov_num += 1
-	return False
+	return None
 	
 def get_defined_tradegoods():
 	"""
