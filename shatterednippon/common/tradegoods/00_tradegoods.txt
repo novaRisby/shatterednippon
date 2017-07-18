@@ -1221,3 +1221,38 @@ rice = {
 		discipline = 2.5
 	}
 }
+
+tamahagane = {
+	color = { }
+	modifier = {
+		infantry_combat_ability = 0.1
+	}
+}
+
+barley = {
+	color = { }
+	modifier = {
+		cavalry_cost = -0.05
+	}
+}
+
+wheat = {
+	color = { }
+	modifier = {
+		local_unrest = -1
+	}
+}
+
+beans = {
+	color = { }
+	modifier = {
+		local_development_cost = 0.1
+	}
+}
+
+lumber = {
+	color = { }
+	modifier = {
+		global_construction_cost = 0.05
+	}
+}
